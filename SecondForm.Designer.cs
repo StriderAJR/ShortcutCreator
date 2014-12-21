@@ -53,6 +53,14 @@
 			this.loadSettingsBtn = new System.Windows.Forms.Button();
 			this.seriesFolderNameTextBox = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
+			this.commandNameTextBox = new System.Windows.Forms.TextBox();
+			this.commandPathTextBox = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.createRegistryCommandButton = new System.Windows.Forms.Button();
+			this.deleteRegistryCommand = new System.Windows.Forms.Button();
+			this.commandKeyTextBox = new System.Windows.Forms.TextBox();
+			this.label10 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// objectListBox
@@ -158,7 +166,7 @@
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(619, 100);
+			this.button3.Location = new System.Drawing.Point(619, 118);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(110, 37);
 			this.button3.TabIndex = 18;
@@ -268,13 +276,87 @@
 			this.label7.TabIndex = 24;
 			this.label7.Text = "Названия в именах папок, для которых не требуется привязка к MPC";
 			// 
+			// commandNameTextBox
+			// 
+			this.commandNameTextBox.Location = new System.Drawing.Point(15, 646);
+			this.commandNameTextBox.Name = "commandNameTextBox";
+			this.commandNameTextBox.Size = new System.Drawing.Size(682, 20);
+			this.commandNameTextBox.TabIndex = 25;
+			this.commandNameTextBox.Text = "Открыть расположение фильма";
+			// 
+			// commandPathTextBox
+			// 
+			this.commandPathTextBox.Location = new System.Drawing.Point(15, 691);
+			this.commandPathTextBox.Name = "commandPathTextBox";
+			this.commandPathTextBox.Size = new System.Drawing.Size(682, 20);
+			this.commandPathTextBox.TabIndex = 25;
+			this.commandPathTextBox.Text = "\"F:\\ShortcutCreator\\bin\\Debug\\MPCShortcutCreator.exe\" \"%L\"";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(12, 630);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(166, 13);
+			this.label8.TabIndex = 10;
+			this.label8.Text = "Комманда контекстного меню:";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(12, 671);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(160, 13);
+			this.label9.TabIndex = 13;
+			this.label9.Text = "Исполняемый файл команды:";
+			// 
+			// createRegistryCommandButton
+			// 
+			this.createRegistryCommandButton.Location = new System.Drawing.Point(221, 715);
+			this.createRegistryCommandButton.Name = "createRegistryCommandButton";
+			this.createRegistryCommandButton.Size = new System.Drawing.Size(110, 37);
+			this.createRegistryCommandButton.TabIndex = 17;
+			this.createRegistryCommandButton.Text = "Создать запись в реестре";
+			this.createRegistryCommandButton.UseVisualStyleBackColor = true;
+			this.createRegistryCommandButton.Click += new System.EventHandler(this.createRegistryCommandButton_Click);
+			// 
+			// deleteRegistryCommand
+			// 
+			this.deleteRegistryCommand.Location = new System.Drawing.Point(406, 715);
+			this.deleteRegistryCommand.Name = "deleteRegistryCommand";
+			this.deleteRegistryCommand.Size = new System.Drawing.Size(110, 37);
+			this.deleteRegistryCommand.TabIndex = 19;
+			this.deleteRegistryCommand.Text = "Удалить запись в реестре";
+			this.deleteRegistryCommand.UseVisualStyleBackColor = true;
+			this.deleteRegistryCommand.Click += new System.EventHandler(this.deleteRegistryCommand_Click);
+			// 
+			// commandKeyTextBox
+			// 
+			this.commandKeyTextBox.Location = new System.Drawing.Point(12, 732);
+			this.commandKeyTextBox.Name = "commandKeyTextBox";
+			this.commandKeyTextBox.Size = new System.Drawing.Size(166, 20);
+			this.commandKeyTextBox.TabIndex = 27;
+			this.commandKeyTextBox.Text = "OpenFilmDir";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(12, 716);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(80, 13);
+			this.label10.TabIndex = 13;
+			this.label10.Text = "Ключ реестра:";
+			// 
 			// SecondForm
 			// 
 			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(746, 624);
+			this.ClientSize = new System.Drawing.Size(746, 764);
+			this.Controls.Add(this.commandKeyTextBox);
 			this.Controls.Add(this.label6);
+			this.Controls.Add(this.commandNameTextBox);
+			this.Controls.Add(this.commandPathTextBox);
 			this.Controls.Add(this.fileExtensionsToSkipTextBox);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label5);
@@ -284,15 +366,20 @@
 			this.Controls.Add(this.saveSettingsBtn);
 			this.Controls.Add(this.shortcutFolderPrefixTextBox);
 			this.Controls.Add(this.label4);
+			this.Controls.Add(this.deleteRegistryCommand);
 			this.Controls.Add(this.deleteShortcutsBtn);
 			this.Controls.Add(this.button3);
+			this.Controls.Add(this.createRegistryCommandButton);
 			this.Controls.Add(this.createShortcutsBtn);
 			this.Controls.Add(this.deleteItemBtn);
 			this.Controls.Add(this.clearListBtn);
 			this.Controls.Add(this.shortcutFolderSelectBtn);
+			this.Controls.Add(this.label10);
+			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.shortcutFolderPathTextBox);
 			this.Controls.Add(this.playerFolderSelectBtn);
+			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.playerPathTextBox);
 			this.Controls.Add(this.label2);
@@ -334,5 +421,13 @@
 		private System.Windows.Forms.Button loadSettingsBtn;
 		private System.Windows.Forms.TextBox seriesFolderNameTextBox;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.TextBox commandNameTextBox;
+		private System.Windows.Forms.TextBox commandPathTextBox;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Button createRegistryCommandButton;
+		private System.Windows.Forms.Button deleteRegistryCommand;
+		private System.Windows.Forms.TextBox commandKeyTextBox;
+		private System.Windows.Forms.Label label10;
 	}
 }

@@ -49,17 +49,12 @@
     <Compile Include="FileFolderDialog.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FileShellExtension.cs" />
     <Compile Include="FilmListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FilmListForm.Designer.cs">
       <DependentUpon>FilmListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="IniFile.cs" />
     <Compile Include="Program.cs" />
@@ -72,9 +67,6 @@
     </Compile>
     <EmbeddedResource Include="FilmListForm.resx">
       <DependentUpon>FilmListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

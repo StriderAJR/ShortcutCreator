@@ -141,6 +141,8 @@ namespace MPCShortcutCreator
 
 		private void createShortcutsBtn_Click(object sender, EventArgs e)
 		{
+			DeleteShortcutsBtn_Click(null, null);
+			
 			if (objectListBox.Items.Count == 0)
 			{
 				MessageBox.Show(
@@ -262,6 +264,7 @@ namespace MPCShortcutCreator
 		public static bool CreateShortcut(string targetFileLocation, string shortcutPath, string mpcPath,
 										  List<string> fileExtensions)
 		{
+
 			string shortcutName = Path.GetFileName(targetFileLocation) == ""
 									  ? Path.GetDirectoryName(targetFileLocation)
 									  : Path.GetFileName(targetFileLocation);
@@ -340,6 +343,21 @@ namespace MPCShortcutCreator
 		private void clearListBtn_Click(object sender, EventArgs e)
 		{
 			objectListBox.Items.Clear();
+		}
+
+		private void createRegistryCommandButton_Click(object sender, EventArgs e)
+		{
+			string menuCommand = commandPathTextBox.Text;
+			FileShellExtension.Register("lnkfile", commandKeyTextBox.Text, commandNameTextBox.Text, menuCommand);
+
+			MessageBox.Show(string.Format( "The {0} shell extension was registered.", commandKeyTextBox.Text), commandKeyTextBox.Text);
+		}
+
+		private void deleteRegistryCommand_Click(object sender, EventArgs e)
+		{
+			FileShellExtension.Unregister("lnkfile", commandKeyTextBox.Text);
+
+			MessageBox.Show(string.Format("The {0} shell extension was unregistered.", commandKeyTextBox.Text), commandKeyTextBox.Text);
 		}
 	}
 }
